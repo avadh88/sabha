@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>સભા આયોજન ફોર્મ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="app-header">
+  <h1 id="org-name">...</h1>
+  <h2 id="org-subtitle">...</h2>
+</header>
+
+<main id="main-form">
+
+  <!-- ── 1. BASIC INFO ─────────────────────────── -->
+  <section class="card">
+    <div class="card-title">સભા મૂળ વિગત</div>
+    <div class="field-row">
+      <div class="field-title">સભા તારીખ</div>
+      <input type="date" id="sabha_date" onchange="onDateChange()" required style="margin-top:6px">
+      <div class="kram-hint" id="kram_hint"></div>
+    </div>
+    <div class="field-row">
+      <div class="field-title">સભા સમય</div>
+      <select id="sabha_time" onchange="onTimeSlotChange()" style="margin-top:6px"></select>
+    </div>
+    <div class="field-row">
+      <div class="field-title">સભા ક્રમ</div>
+      <input type="text" id="sabha_kram" placeholder="ખાલી રાખો — તારીખ પ્રમાણે આપોઆપ ભરાશે" style="margin-top:6px">
+    </div>
+  </section>
+
+  <!-- ── 2. PROGRAM ROWS ───────────────────────── -->
+  <section class="card">
+    <div class="card-title">સભા કાર્યક્રમ</div>
+
+    <!-- Macro to keep rows DRY — repeated manually for each row -->
+
+    <!-- ❶ ધૂન -->
+    <div class="field-row">
+      <div class="row-header">
+        <div class="field-title">❶ ધૂન</div>
+        <div class="time-inline">
+          <span class="time-chip-label">⏱ સમય</span>
+          <select id="time_1" class="time-sel" onchange="toggleTimeOther(1)"></select>
+        </div>
+      </div>
+      <input type="text" id="time_1_other" class="time-other-input" placeholder="સમય લખો... દા.ત. ૯:૦૦ થી ૯:૦૫">
+      <div class="cols-2" style="margin-top:8px">
+        <div>
+          <div class="field-subtitle">વિગત</div>
+          <select id="dhoon_val" onchange="toggleOther('dhoon_val','dhoon_other')"></select>
+          <input type="text" id="dhoon_other" class="other-input" placeholder="ધૂન નામ લખો...">
+        </div>
+        <div>
+          <div class="field-subtitle">નામ (રજૂઆત)</div>
+          <select id="dhoon_perf" onchange="toggleOther('dhoon_perf','dhoon_perf_other')"></select>
+          <input type="text" id="dhoon_perf_other" class="other-input" placeholder="નામ...">
+        </div>
+      </div>
+    </div>
+
+    <!-- ❷ પ્રાર્થના -->
+    <div class="field-row">
+      <div class="row-header">
+        <div class="field-title">❷ પ્રાર્થના</div>
+        <div class="time-inline">
+          <span class="time-chip-label">⏱ સમય</span>
+          <select id="time_2" class="time-sel" onchange="toggleTimeOther(2)"></select>
+        </div>
+      </div>
+      <input type="text" id="time_2_other" class="time-other-input" placeholder="સમય લખો... દા.ત. ૯:૦૫ થી ૯:૧૨">
+      <div class="cols-2" style="margin-top:8px">
+        <div>
+          <div class="field-subtitle">વિગત</div>
+          <select id="prarthana_val" onchange="toggleOther('prarthana_val','prarthana_other')"></select>
+          <input type="text" id="prarthana_other" class="other-input" placeholder="પ્રાર્થના લખો...">
+        </div>
+        <div>
+          <div class="field-subtitle">નામ (રજૂઆત)</div>
+          <select id="prarthana_perf" onchange="toggleOther('prarthana_perf','prarthana_perf_other')"></select>
+          <input type="text" id="prarthana_perf_other" class="other-input" placeholder="નામ...">
+        </div>
+      </div>
+    </div>
+
+    <!-- ❸ સ્તુતિ ગાન -->
+    <div class="field-row">
+      <div class="row-header">
+        <div class="field-title">❸ સ્તુતિ ગાન</div>
+        <div class="time-inline">
+          <span class="time-chip-label">⏱ સમય</span>
+          <select id="time_3" class="time-sel" onchange="toggleTimeOther(3)"></select>
+        </div>
+      </div>
+      <input type="text" id="time_3_other" class="time-other-input" placeholder="સમય લખો... દા.ત. ૯:૧૨ થી ૯:૧૫">
+      <div class="cols-2" style="margin-top:8px">
+        <div>
+          <div class="field-subtitle">વિગત</div>
+          <div class="static-val" id="stuti_content"></div>
+        </div>
+        <div>
+          <div class="field-subtitle">નામ (રજૂઆત)</div>
+          <div class="static-val" id="stuti_performer"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ❹ પત્રિકાસાર વાંચન -->
+    <div class="field-row">
+      <div class="row-header">
+        <div class="field-title">❹ પત્રિકાસાર વાંચન</div>
+        <div class="time-inline">
+          <span class="time-chip-label">⏱ સમય</span>
+          <select id="time_4" class="time-sel" onchange="toggleTimeOther(4)"></select>
+        </div>
+      </div>
+      <input type="text" id="time_4_other" class="time-other-input" placeholder="સમય લખો... દા.ત. ૯:૧૫ થી ૯:૨૦">
+      <div class="cols-2" style="margin-top:8px">
+        <div>
+          <div class="field-subtitle">વિગત</div>
+          <div class="static-val" id="patrika_content"></div>
+        </div>
+        <div>
+          <div class="field-subtitle">નામ (રજૂઆત)</div>
+          <select id="patrika_perf" onchange="toggleOther('patrika_perf','patrika_perf_other')"></select>
+          <input type="text" id="patrika_perf_other" class="other-input" placeholder="નામ...">
+        </div>
+      </div>
+    </div>
+
+    <!-- ❺ વીડિયો -->
+    <div class="field-row">
+      <div class="row-header">
+        <div class="field-title">❺ વીડિયો</div>
+        <div class="time-inline">
+          <span class="time-chip-label">⏱ સમય</span>
+          <select id="time_5" class="time-sel" onchange="toggleTimeOther(5)"></select>
+        </div>
+      </div>
+      <input type="text" id="time_5_other" class="time-other-input" placeholder="સમય લખો... દા.ત. ૯:૨૦ થી ૯:૩૦">
+      <div class="cols-2" style="margin-top:8px">
+        <div>
+          <div class="field-subtitle">વિગત</div>
+          <div class="static-val" id="video_content"></div>
+        </div>
+        <div>
+          <div class="field-subtitle">નામ (રજૂઆત)</div>
+          <div class="static-val" id="video_performer"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ❻ પ્રવચન–૧ -->
+    <div class="field-row">
+      <div class="row-header">
+        <div class="field-title">❻ પ્રવચન–૧</div>
+        <div class="time-inline">
+          <span class="time-chip-label">⏱ સમય</span>
+          <select id="time_6" class="time-sel" onchange="toggleTimeOther(6)"></select>
+        </div>
+      </div>
+      <input type="text" id="time_6_other" class="time-other-input" placeholder="સમય લખો... દા.ત. ૯:૩૦ થી ૯:૪૫">
+      <div class="cols-2" style="margin-top:8px">
+        <div>
+          <div class="field-subtitle">વિગત (વિષય)</div>
+          <textarea id="pravachan1_text" placeholder="પ્રવચન ૧ નો વિષય લખો..."></textarea>
+        </div>
+        <div>
+          <div class="field-subtitle">નામ (રજૂઆત)</div>
+          <select id="pravachan1_perf" onchange="toggleOther('pravachan1_perf','pravachan1_perf_other')"></select>
+          <input type="text" id="pravachan1_perf_other" class="other-input" placeholder="નામ...">
+        </div>
+      </div>
+    </div>
+
+    <!-- ❼ આરતી -->
+    <div class="field-row">
+      <div class="row-header">
+        <div class="field-title">❼ આરતી</div>
+        <div class="time-inline">
+          <span class="time-chip-label">⏱ સમય</span>
+          <select id="time_7" class="time-sel" onchange="toggleTimeOther(7)"></select>
+        </div>
+      </div>
+      <input type="text" id="time_7_other" class="time-other-input" placeholder="સમય લખો... દા.ત. ૯:૪૫ થી ૯:૫૦">
+      <div class="merged-box" style="margin-top:8px">
+        <div class="merged-static" id="aarti_main"></div>
+        <div class="merged-note" id="aarti_note"></div>
+        <div class="merged-hint">વધારાની વિગત (ઐચ્છિક):</div>
+        <textarea id="aarti_extra" class="merged-extra" placeholder="જો કોઈ ખાસ જાહેરાત હોય..."></textarea>
+      </div>
+    </div>
+
+    <!-- ❽ પ્રવચન–૨ -->
+    <div class="field-row">
+      <div class="row-header">
+        <div class="field-title">❽ પ્રવચન–૨</div>
+        <div class="time-inline">
+          <span class="time-chip-label">⏱ સમય</span>
+          <select id="time_8" class="time-sel" onchange="toggleTimeOther(8)"></select>
+        </div>
+      </div>
+      <input type="text" id="time_8_other" class="time-other-input" placeholder="સમય લખો... દા.ત. ૯:૫૦ થી ૧૦:૨૫">
+      <div class="cols-2" style="margin-top:8px">
+        <div>
+          <div class="field-subtitle">વિગત (વિષય)</div>
+          <textarea id="pravachan2_text" placeholder="પ્રવચન ૨ નો વિષય લખો..."></textarea>
+        </div>
+        <div>
+          <div class="field-subtitle">નામ (રજૂઆત)</div>
+          <select id="pravachan2_perf" onchange="toggleOther('pravachan2_perf','pravachan2_perf_other')"></select>
+          <input type="text" id="pravachan2_perf_other" class="other-input" placeholder="નામ...">
+        </div>
+      </div>
+    </div>
+
+    <!-- ❾ જાહેરાત / સંકલ્પ ધૂન -->
+    <div class="field-row">
+      <div class="row-header">
+        <div class="field-title">❾ જાહેરાત / સંકલ્પ ધૂન</div>
+        <div class="time-inline">
+          <span class="time-chip-label">⏱ સમય</span>
+          <select id="time_9" class="time-sel" onchange="toggleTimeOther(9)"></select>
+        </div>
+      </div>
+      <input type="text" id="time_9_other" class="time-other-input" placeholder="સમય લખો... દા.ત. ૧૦:૨૫ થી ૧૦:૨૭">
+      <div class="merged-box" style="margin-top:8px">
+        <div class="merged-static" id="jaherat_static"></div>
+        <div class="merged-hint" style="margin-top:8px">વધારાની જાહેરાત (ઐચ્છિક):</div>
+        <textarea id="jaherat_extra" class="merged-extra" placeholder="અન્ય જાહેરાત..."></textarea>
+      </div>
+    </div>
+
+    <!-- ❿ વિદાય શ્લોક -->
+    <div class="field-row">
+      <div class="row-header">
+        <div class="field-title">❿ વિદાય શ્લોક</div>
+        <div class="time-inline">
+          <span class="time-chip-label">⏱ સમય</span>
+          <select id="time_10" class="time-sel" onchange="toggleTimeOther(10)"></select>
+        </div>
+      </div>
+      <input type="text" id="time_10_other" class="time-other-input" placeholder="સમય લખો... દા.ત. ૧૦:૨૭ થી ૧૦:૩૦">
+      <div class="merged-box" style="margin-top:8px">
+        <div class="merged-static" id="viday_static"></div>
+        <div class="merged-hint" style="margin-top:8px">વધારાનો ઉમેરો (ઐચ્છિક):</div>
+        <textarea id="viday_extra" class="merged-extra" placeholder="અન્ય..."></textarea>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ── 3. PRAVAKTA ───────────────────────────── -->
+  <section class="card">
+    <div class="card-title">સભા સંચાલન પ્રવક્તા</div>
+    <div class="field-row">
+      <div class="field-subtitle">પ્રવક્તા</div>
+      <select id="pravakta_sel" onchange="toggleOther('pravakta_sel','pravakta_other')"></select>
+      <input type="text" id="pravakta_other" class="other-input" placeholder="પ્રવક્તા નામ અને ફોન...">
+    </div>
+  </section>
+
+  <!-- ── 4. BRAMVIDHYA GALLERY ─────────────────── -->
+  <section class="card">
+    <div class="card-title">બ્રહ્મવિદ્યાનો પાઠ</div>
+    <div class="field-row">
+      <div class="field-subtitle" style="margin-bottom:6px">પાઠ પસંદ કરો</div>
+      <p class="gallery-zoom-hint">📌 ક્લિક = પસંદ &nbsp;|&nbsp; 🔍 Preview ઇમેજ પર ક્લિક = મોટો જોવા</p>
+      <div class="gallery-grid" id="gallery-grid"></div>
+      <div class="gallery-preview" id="gallery-preview">
+        <div class="gallery-preview-header">
+          <span id="preview-label">Preview</span>
+          <span style="font-weight:400;font-size:11px;opacity:.85">ઇમેજ પર ક્લિક — FullScreen</span>
+        </div>
+        <div class="gallery-preview-img-wrap" id="preview-img-wrap">
+          <div class="gallery-preview-no-img">
+            <div class="big-icon">🖼</div>
+            ઇમેજ URL config.json માં ઉમેરો
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SUBMIT ────────────────────────────────── -->
+  <div class="submit-area">
+    <button class="submit-btn" onclick="submitForm()">📄 &nbsp;Sabha PDF બનાવો</button>
+  </div>
+
+</main>
+
+<div class="lightbox-overlay" id="lightbox" onclick="closeLightbox(event)">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" onclick="document.getElementById('lightbox').classList.remove('open')">✕</button>
+    <img id="lightbox-img" src="" alt="">
+    <div class="lightbox-label" id="lightbox-label"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="js/app.js"></script>
+</body>
+</html>

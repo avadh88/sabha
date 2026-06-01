@@ -1,0 +1,125 @@
+{
+  "_readme": "Edit this file to customise all Sabha form data. Save and reload the page.",
+
+  "organization": {
+    "name": "બી.એ.પી.એસ. વૈષ્ણોદેવી સત્સંગ મંડળ",
+    "subtitle": "અઠવાડિક સત્સંગ સભા આયોજન",
+    "footer_note": "નોંધઃ કાગળ પેન સાથે લાવવા."
+  },
+
+  "sabha_time_slots": [
+    { "label": "રાત્રે ૯:૦૦ થી ૧૦:૩૦",  "start": "21:00" },
+    { "label": "રાત્રે ૮:૩૦ થી ૧૦:૦૦",  "start": "20:30" },
+    { "label": "રાત્રે ૯:૩૦ થી ૧૧:૦૦",  "start": "21:30" }
+  ],
+
+  "_program_durations_note": "Duration in minutes for each of the 10 program items in order",
+  "program_durations_minutes": [5, 7, 3, 5, 10, 15, 5, 35, 2, 3],
+
+  "dhoon_options": [
+    "જય અક્ષર પતિ પુરષોતમ....",
+    "સ્વામિનારાયણ નામ મારા વહાલા",
+    "લગની લાગી મુને...",
+    "જય અક્ષર પતિ પુરષોત્તમ....",
+    "સ્વામિનારાયણ નામ ભજ..."
+  ],
+
+  "prarthana_options": [
+    "ભાવ ઘરીને બોલો જય..",
+    "વંદન કરીએ પ્રભુ ભાવ ધરી..",
+    "ભૂલીશ હું જગતની માયા..",
+    "પૂર્વનું પુણ્ય પ્રગટ થયું જ્યારે.."
+  ],
+
+  "_performers_note": "Shared performer dropdown used for Dhoon, Prarthana, Patrikasaar, Pravachan-1, Pravachan-2",
+  "performers": [
+    "સંગીત વૃંદ",
+    "કિરણ ભાઈ સોની",
+    "શ્રીનલભાઈ ઝવેરી",
+    "ચિરંતનભાઈ પંચાલ",
+    "રિતેશભાઈ પ્રજાપતિ",
+    "અવધભાઈ પટેલ",
+    "સતીષભાઈ જોષી",
+    "વ્રજેશભાઈ સોની",
+    "કૌશિકભાઈ જાની",
+    "જિગ્નેશભાઈ પટેલ",
+    "ઋષિભાઈ પટેલ",
+    "પ્રભુભાઈ પટેલ",
+    "ચિરાગભાઈ સુથાર",
+    "સંજીભાઈ પંચાલ",
+    "પ્રજ્ઞેશભાઈ દેસાઈ",
+    "ધીરજભાઈ સુહાગીયા",
+    "પૂજ્ય નિર્મળચરિત સ્વામી",
+    "પૂજ્ય યોગીનંદન સ્વામી"
+  ],
+
+  "pravakta_options": [
+    "પ્રહર્ષભાઈ પટેલ – ૯૪૨૬૮૨૪૬૫૦",
+    "સુરજભાઈ જોષી – ૯૪૨૬૬૦૦૦૬૪",
+    "શ્રીનલભાઈ ઝવેરી – ૯૮૭૯૯૦૦૨૧૫",
+    "વ્રજેશભાઈ સોની – ૯૨૭૭૧૫૮૮૦૨",
+    "આકાશભાઈ પટેલ – ૯૫૧૦૨૧૧૧૯૧",
+    "રાજેશભાઈ કડીઆ – ૯૫૩૭૦૫૯૭૮૦",
+    "જિગ્નેશભાઈ પટેલ – ૯૯૦૯૭૦૦૪૨૫",
+    "અમિતભાઈ પટેલ – ૯૯૯૮૯૯૧૬૭૧"
+  ],
+
+  "static_content": {
+    "stuti_gaan_content":   "શ્રીમત્ સદ્ગુણ..",
+    "stuti_gaan_performer": "સમૂહમાં",
+
+    "patrika_content":      "સહજાનંદ સુધા મુજબ",
+
+    "video_content":        "ગુરૂહરી દર્શન",
+    "video_performer":      "પ્રોજેક્ટરના માધ્યમથી",
+
+    "aarti_main":  "આરતીની જાહેરાત કરી આજની સભાના પ્રસાદના યજમાન તથા જે હરિભક્તો નવા હોય તેમની જાહેરાત કરી આરતી માટે બોલાવવા",
+    "aarti_note":  "આરતી ડિસ કોય યજમાને ફેરવવી નય",
+
+    "jaherat_lines": [
+      "૧) આજે જે યજમાનો એ પ્રસાદ ની સેવા કરી છે તેઓ તન મન ધન થી સુખી થાય.",
+      "૨) જગતપુર મંદિર નિર્વિઘ્ને પૂર્ણ થાય.",
+      "૩) મહંત સ્વામી મહારાજ નુ સ્વાસ્થ્ય સારુ રહે."
+    ],
+
+    "viday_shlok_lines": [
+      "ગુણાતીતં ગુરૂં પ્રાપ્ય, બ્રહ્મ રૂપં નિજાત્મનઃ વિભાવ્ય દાસ ભાવેન, સ્વામિનારાયણં ભજે",
+      "શ્રીહરિં સાક્ષરમ સર્વદેવેશ્વરં, ભક્તિધર્માત્મજં દિવ્યરૂપં પરમ,",
+      "શાન્તિદં મુક્તિદં કામદં કારણં, સ્વામિનારાયણં નીલકંઠ ભજે ॥ શ્રીહરિ"
+    ]
+  },
+
+  "_bramvidhya_note": "Set 'image' to a full URL (https://...) or a local path (images/path_25.jpg). URL is recommended for hosting.",
+  "bramvidhya_paths": [
+    { "id": 1,  "label": "બ્રહ્મવિદ્યાનો પાઠ – ૧",  "image": "https://www.baps.org/Data/Sites/1/Media/GalleryImages/35634/WebImages/20251216_brahmavidyapath_.jpg" },
+    { "id": 2,  "label": "બ્રહ્મવિદ્યાનો પાઠ – ૨",  "image": "https://www.baps.org/Data/Sites/1/Media/GalleryImages/35634/WebImages/20251217_brahmavidyapath.jpg" },
+    { "id": 3,  "label": "બ્રહ્મવિદ્યાનો પાઠ – ૩",  "image": "https://www.baps.org/Data/Sites/1/Media/GalleryImages/35634/WebImages/20251218_brahmavidyapath.jpg" },
+    { "id": 4,  "label": "બ્રહ્મવિદ્યાનો પાઠ – ૪",  "image": "https://www.baps.org/Data/Sites/1/Media/GalleryImages/35634/WebImages/20251219_brahmavidyapath.jpg" },
+    { "id": 5,  "label": "બ્રહ્મવિદ્યાનો પાઠ – ૫",  "image": "https://www.baps.org/Data/Sites/1/Media/GalleryImages/35634/WebImages/20251220_brahmavidyapath.jpg" },
+    { "id": 6,  "label": "બ્રહ્મવિદ્યાનો પાઠ – ૬",  "image": "https://www.baps.org/Data/Sites/1/Media/GalleryImages/35634/WebImages/20251221_brahmavidyapath_001.jpg" },
+    { "id": 7,  "label": "બ્રહ્મવિદ્યાનો પાઠ – ૭",  "image": "https://www.baps.org/Data/Sites/1/Media/GalleryImages/35634/WebImages/20251222_brahmavidyapath.jpg" },
+    { "id": 8,  "label": "બ્રહ્મવિદ્યાનો પાઠ – ૮",  "image": "https://www.baps.org/Data/Sites/1/Media/GalleryImages/35634/WebImages/20251223_brahmavidyapath.jpg" },
+    { "id": 9,  "label": "બ્રહ્મવિદ્યાનો પાઠ – ૯",  "image": "https://www.baps.org/Data/Sites/1/Media/GalleryImages/35634/WebImages/20251224_brahmavidyapath.jpg" },
+    { "id": 10, "label": "બ્રહ્મવિદ્યાનો પાઠ – ૧૦", "image": "https://www.baps.org/Data/Sites/1/Media/GalleryImages/35634/WebImages/20251225_brahmavidyapath.jpg" },
+    { "id": 11, "label": "બ્રહ્મવિદ્યાનો પાઠ – ૧૧", "image": "https://www.baps.org/Data/Sites/1/Media/GalleryImages/35634/WebImages/20251226_brahmavidyapath.jpg" },
+    { "id": 12, "label": "બ્રહ્મવિદ્યાનો પાઠ – ૧૨", "image": "https://www.baps.org/Data/Sites/1/Media/GalleryImages/35634/WebImages/20251227_brahmavidyapath.jpg" },
+    { "id": 13, "label": "બ્રહ્મવિદ્યાનો પાઠ – ૧૩", "image": "https://www.baps.org/Data/Sites/1/Media/GalleryImages/35634/WebImages/20251228_brahmavidyapath.jpg" },
+    { "id": 14, "label": "બ્રહ્મવિદ્યાનો પાઠ – ૧૪", "image": "https://www.baps.org/Data/Sites/1/Media/GalleryImages/35634/WebImages/20251229_brahmavidyapath.jpg" },
+    { "id": 15, "label": "બ્રહ્મવિદ્યાનો પાઠ – ૧૫", "image": "https://www.baps.org/Data/Sites/1/Media/GalleryImages/35634/WebImages/20251230_brahmavidyapath.jpg" },
+    { "id": 16, "label": "બ્રહ્મવિદ્યાનો પાઠ – ૧૬", "image": "https://www.baps.org/Data/Sites/1/Media/GalleryImages/35634/WebImages/20251231_brahmavidyapath.jpg" },
+    { "id": 17, "label": "બ્રહ્મવિદ્યાનો પાઠ – ૧૭", "image": "https://www.baps.org/Data/Sites/1/Media/GalleryImages/35634/WebImages/20260101_brahmavidyapath.jpg" },
+    { "id": 18, "label": "બ્રહ્મવિદ્યાનો પાઠ – ૧૮", "image": "https://www.baps.org/Data/Sites/1/Media/GalleryImages/35634/WebImages/20260102_brahmavidyapath.jpg" },
+    { "id": 19, "label": "બ્રહ્મવિદ્યાનો પાઠ – ૧૯", "image": "https://www.baps.org/Data/Sites/1/Media/GalleryImages/35634/WebImages/20260103_brahmavidyapath.jpg" },
+    { "id": 20, "label": "બ્રહ્મવિદ્યાનો પાઠ – ૨૦", "image": "https://www.baps.org/Data/Sites/1/Media/GalleryImages/35634/WebImages/20260104_brahmavidyapath.jpg" },
+    { "id": 21, "label": "બ્રહ્મવિદ્યાનો પાઠ – ૨૧", "image": "https://www.baps.org/Data/Sites/1/Media/GalleryImages/35634/WebImages/20260105_brahmavidyapath.jpg" },
+    { "id": 22, "label": "બ્રહ્મવિદ્યાનો પાઠ – ૨૨", "image": "https://www.baps.org/Data/Sites/1/Media/GalleryImages/35634/WebImages/20260106_brahmavidyapath.jpg" },
+    { "id": 23, "label": "બ્રહ્મવિદ્યાનો પાઠ – ૨૩", "image": "https://www.baps.org/Data/Sites/1/Media/GalleryImages/35634/WebImages/20260107_brahmavidyapath_16x9.jpg" },
+    { "id": 24, "label": "બ્રહ્મવિદ્યાનો પાઠ – ૨૪", "image": "https://www.baps.org/Data/Sites/1/Media/GalleryImages/35634/WebImages/20260108_brahmavidyapath.jpg" },
+    { "id": 25, "label": "બ્રહ્મવિદ્યાનો પાઠ – ૨૫", "image": "https://www.baps.org/Data/Sites/1/Media/GalleryImages/35634/WebImages/20260109_brahmavidyapath.jpg" },
+    { "id": 26, "label": "બ્રહ્મવિદ્યાનો પાઠ – ૨૬", "image": "https://www.baps.org/Data/Sites/1/Media/GalleryImages/35634/WebImages/20260110_brahmavidyapath.jpg" },
+    { "id": 27, "label": "બ્રહ્મવિદ્યાનો પાઠ – ૨૭", "image": "https://www.baps.org/Data/Sites/1/Media/GalleryImages/35634/WebImages/20260111_brahmavidyapath.jpg" },
+    { "id": 28, "label": "બ્રહ્મવિદ્યાનો પાઠ – ૨૮", "image": "https://www.baps.org/Data/Sites/1/Media/GalleryImages/35634/WebImages/20260112_brahmavidyapath.jpg" },
+    { "id": 29, "label": "બ્રહ્મવિદ્યાનો પાઠ – ૨૯", "image": "https://www.baps.org/Data/Sites/1/Media/GalleryImages/35634/WebImages/20260113_brahmavidyapath.jpg" },
+    { "id": 30, "label": "બ્રહ્મવિદ્યાનો પાઠ – ૩૦", "image": "https://www.baps.org/Data/Sites/1/Media/GalleryImages/35634/WebImages/20260114_brahmavidyapath.jpg" }
+  ]
+}
